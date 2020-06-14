@@ -1,0 +1,24 @@
+-cp src
+-lib perf.js
+# -dce full
+-D analyzer-optimize
+-D stats
+-D source-map-content
+-debug
+
+--each
+
+--next
+-main Main
+-js build/js/Main.js
+--macro include("pixi",true)
+
+
+--next
+-main Main
+-cs build/CS/
+--macro include("pixi",true)
+
+--next
+-main Main
+-java build/java
